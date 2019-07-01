@@ -1,0 +1,21 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope) {
+			$scope.save=function(){
+				alert("i am in save");
+			}
+			$scope.update=function(){
+				alert("i am in update");
+				}	
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+	<button ng-click="save();">click1</button>
+	<button ng-click="update();">click2</button>
+</body>
+</html>

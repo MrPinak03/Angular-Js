@@ -1,0 +1,26 @@
+<html ng-app="AppModule">
+<head>
+
+	<script type="text/javascript" src="angular.js">
+	</script>
+
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope){
+			$scope.username="";
+			$scope.password="";
+		}
+	</script>
+
+</head>
+
+<body ng-controller="c1">
+	<form>
+		User Name: <input type="text" name="username" ng-model="username"><br>
+		Password: <input type="password" name="password" ng-model="password"><br>
+		<button>Sign in</button>
+	</form>
+</body>
+
+</html>

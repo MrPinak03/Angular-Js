@@ -1,0 +1,18 @@
+
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js">
+	</script>
+		<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope){
+			$scope.message="Hai Pinak,Welcome to Angular JS World"
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+	{{message}}
+
+</body>
+</html>

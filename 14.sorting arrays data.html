@@ -1,0 +1,24 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope) {
+			$scope.students=[
+			{"id":2, "name":"ABC"},
+			{"id":1, "name":"GHI"},
+			{"id":3, "name":"DEF"}
+			]
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+	<table>
+		<tr ng-repeat="s in students|orderBy:'id' "><br>
+			<td>{{s.id}}</td>
+			<td>{{s.name}}</td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html ng-app="AppModule">
+<head>
+
+	<script type="text/javascript" src="angular.js">
+	</script>
+
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope){
+			$scope.username="";
+			$scope.password="";
+		}
+	</script>
+
+</head>
+
+<body ng-controller="c1">
+	<form name="loginform" novalidate>
+		User Name: <input type="text" name="username" ng-model="username" ng-required="true" ng-minlength="4" ng-maxlength="8">
+		<span ng-if="loginform.username.$invalid">
+			(Please provie 4 chars)
+		</span><br>
+		Password: <input type="password" name="password" ng-model="password" ng-requirded="true" ng-minlength="8" ng-maxlength="16" ng>
+		<span ng-if="loginform.password.$invalid">
+			(Please provide min 8 chars & max 16 chars...)
+		</span><br>
+		<button>Login</button>
+	</form>
+</body>
+
+</html>

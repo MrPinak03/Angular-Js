@@ -1,0 +1,36 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope) {
+			$scope.colName="";
+			$scope.students=[
+			{"id":1, "name":"ABC"},
+			{"id":2, "name":"GHI"},
+			{"id":3, "name":"DEF"},
+			{"id":4, "name":"JKL"},
+			{"id":5, "name":"MNO"},
+			{"id":6, "name":"ZBA"},
+			{"id":7, "name":"YZA"},
+			{"id":8, "name":"VWX"},
+			{"id":9, "name":"STU"},
+			{"id":10, "name":"PQR"}
+			]
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+	<table border="2">
+		<th>ID</th>
+		<th>NAME</th>
+		<tr ng-repeat="s in students| limitTo:3:0 "><br>
+			<td>{{s.id}}</td>
+			<td>{{s.name}}</td>
+		</tr>
+	</table><br>
+	<button>Previous</button>
+	<button>Next</button>
+</body>
+</html>

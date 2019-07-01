@@ -1,0 +1,30 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope,$http) {
+			$scope.student={};
+			$scope.save=function(){
+				var data={
+					"id": $scope.id,
+					"name": $scope.name,
+					"email": $scope.email
+				}
+			$http.post("https://jsonplacehodler.typicode.com/users").then(function(response){
+				alert("success");
+			})
+			
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+	<form>
+		Id: <input type="text" name="id" ng-model="student.id"><br>
+		Name: <input type="text" name="name" ng-model="student.name"><br>
+		Email: <input type="text" name="email" ng-model="student.email"><br>
+		<button ng-click="save()">save</button>
+	</form>
+</body>
+</html>

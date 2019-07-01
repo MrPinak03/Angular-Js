@@ -1,0 +1,16 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope) {
+			$scope.stringData="AbcD";
+			}
+	</script>
+</head>
+<body ng-controller="c1">
+	{{stringData|uppercase}}
+	{{stringData|lowercase}}
+</body>
+</html>

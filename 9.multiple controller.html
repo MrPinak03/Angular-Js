@@ -1,0 +1,24 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope) {
+			$scope.message1="i am in c1";
+			}
+		x.controller("c2",f2);
+		function f2($scope) {
+			$scope.message2="i am in c2";
+			}
+	</script>
+</head>
+<body>
+	<div ng-controller="c1">
+		{{message1}}
+	</div>
+	<div ng-controller="c2">
+		{{message2}}
+	</div>
+</body>
+</html>

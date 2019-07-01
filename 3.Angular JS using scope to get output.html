@@ -1,0 +1,20 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js">
+	</script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope){
+			$scope.StudentName=" Pinak";
+			$scope.age=24;
+			$scope.Developer=" True";
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+	Current Student Name is{{StudentName}}<br>
+	His age is {{age}}<br>
+	He is a software developer?{{Developer}}<br>
+</body>
+</html>

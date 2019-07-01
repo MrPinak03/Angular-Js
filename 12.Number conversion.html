@@ -1,0 +1,17 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope) {
+			$scope.price=99;
+			}
+	</script>
+</head>
+<body ng-controller="c1">
+	{{price|currency}}<br>
+	{{price|currency:"&#8377"}}
+
+</body>
+</html>
