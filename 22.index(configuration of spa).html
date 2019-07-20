@@ -1,0 +1,39 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript" src="angular-route.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[ngRoute]);
+		x.config(function($routeProvider) {
+			$routeProvider.when("/home",{
+				templateUrl:"home.html"
+			})
+			$routeProvider.when("/contact",{
+				templateUrl:"contact.html"
+			})
+			$routeProvider.when("/about",{
+				templateUrl:"about.html"
+			})
+			$routeProvider.when("/login",{
+				templateUrl:"login.html"
+			})
+			$routeProvider.when("/",{
+				templateUrl:"home.html"
+			})
+		})
+	</script>
+</head>
+<body>
+	<h1>Sathya Tech</h1>
+	<hr>
+	<a href="#!home">Home</a>|
+	<a href="#!contact">Contact</a>|
+	<a href="#!about">About</a>|
+	<a href="#!login">Login</a>
+	<hr>
+	<div ng-view>
+	</div>
+	<hr>
+	@Sathya
+</body>
+</html>

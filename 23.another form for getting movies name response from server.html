@@ -1,0 +1,28 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope,$http) {
+			$scope.movieName="";
+			$scope.movies=[];
+			$scope.getMovies=function(){
+				var url="http://www.omdbapi.com/?apiKey=2d2c9886&s="+$scope.movieName;
+				$http.get(url).then(function(response){
+					$scope.movies=response.data.Search;
+			},function(error){
+				alert("data loading failed");
+				});
+			}
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+		<input type="text" name="movieName" ng-model="movieName">
+		<button ng-click="getMovies();">Search</button><br>
+		<select>
+			<option ng-repeat="m in movies">{{m.Title}}</option>
+		</select>	
+</body>
+</html>

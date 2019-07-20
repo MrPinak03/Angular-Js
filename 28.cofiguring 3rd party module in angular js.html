@@ -1,0 +1,27 @@
+<html>
+<head>
+	<script type="angular.js"></script>
+	<script src="angular-animate.js" ></script>
+	<link href="toaster.min.css" rel="stylesheet" />
+	<script src="toaster.min.js"></script>
+	<script type="text/javascript">
+		var m1=angular.module('main', ['toaster', 'ngAnimate']);
+    	m1.controller('c1',f1);
+     	function f1($scope, toaster) {
+        $scope.display = function(){
+            toaster.pop({
+                type: 'error',
+                title: 'Title text',
+                body: 'Body text',
+                timeout: 3000
+            });
+        }
+    }
+	</script>
+</head>
+<body ng-controller="c1">
+	<toaster-container></toaster-container>
+	<button ng-click="display()">Click</button>
+
+</body>
+</html>

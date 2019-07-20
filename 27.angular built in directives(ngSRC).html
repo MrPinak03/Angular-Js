@@ -1,0 +1,19 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope,$http){
+			$scope.imgURL="http://www.telugupix.com/keerthy-suresh/nggallery/image/4619";
+			$scope.m1=function(){
+				$scope.imgURL="http://www.telugupix.com/keerthy-suresh/nggallery/image/4619";
+			}
+		}
+	</script>
+</head>
+<body ng-controller="c1">
+	<img ng-src="{{imgURL}}">
+	<button ng-click="m1();">Next</button>
+</body>
+</html>

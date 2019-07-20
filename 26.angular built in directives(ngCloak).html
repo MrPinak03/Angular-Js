@@ -1,0 +1,18 @@
+<html ng-app="AppModule">
+<head>
+	<script type="text/javascript" src="angular.js"></script>
+	<script type="text/javascript">
+		var x=angular.module('AppModule',[]);
+		x.controller("c1",f1);
+		function f1($scope){
+			$scope.m1=function(){
+				alert("copy event fired");
+		}
+	}
+	</script>
+</head>
+<body ng-controller="c1">
+	<input type="text" name="email"
+	ng-copy="m1();">
+</body>
+</html>
